@@ -543,6 +543,124 @@
       color: #fed7aa;
     }
 
+    .gallery-section {
+      margin-top: 32px;
+      padding: 18px 18px 20px;
+      border-radius: 22px;
+      border: 1px solid rgba(30, 64, 175, 0.4);
+      background:
+        radial-gradient(circle at 0 0, rgba(248, 250, 252, 0.04), transparent 55%),
+        rgba(15, 23, 42, 0.96);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .gallery-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .gallery-title {
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .gallery-subtitle {
+      margin-top: 6px;
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 460px;
+      line-height: 1.5;
+    }
+
+    .era-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .era-group {
+      padding: 14px 12px 12px;
+      border-radius: 16px;
+      background: rgba(15, 23, 42, 0.94);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+    }
+
+    .era-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .era-name {
+      font-size: 14px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+    }
+
+    .era-note {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .painting-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .painting-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      background: #020617;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .painting-thumb {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      filter: saturate(1.05) contrast(1.03);
+      transition: transform 160ms ease-out, filter 160ms ease-out;
+    }
+
+    .painting-card:hover .painting-thumb {
+      transform: scale(1.04);
+      filter: saturate(1.1) contrast(1.05);
+    }
+
+    .painting-caption {
+      padding: 6px 8px 7px;
+      font-size: 11px;
+      line-height: 1.4;
+      color: var(--muted);
+    }
+
+    .painting-caption strong {
+      display: block;
+      color: #e5e7eb;
+      font-weight: 500;
+      margin-bottom: 1px;
+    }
+
+    @media (max-width: 700px) {
+      .gallery-section {
+        padding: 16px 14px 18px;
+      }
+    }
+
     footer {
       margin-top: 24px;
       text-align: center;
@@ -778,6 +896,245 @@
         </section>
       </aside>
     </main>
+
+    <section
+      class="gallery-section"
+      aria-label="Examples of high-resolution paintings grouped by era"
+    >
+      <div class="gallery-header">
+        <div>
+          <div class="gallery-title">Gallery by era</div>
+          <p class="gallery-subtitle">
+            Explore five landmark paintings from three key eras. Images are drawn from
+            public‑domain museum scans so you can zoom in on brushwork, light, and detail.
+          </p>
+        </div>
+        <div class="pill">
+          15 works · <span>3 eras</span>
+        </div>
+      </div>
+
+      <div class="era-grid">
+        <section class="era-group" aria-labelledby="era-renaissance">
+          <div class="era-heading">
+            <h2 class="era-name" id="era-renaissance">Renaissance</h2>
+            <p class="era-note">Balanced perspective, calm light, measured emotion.</p>
+          </div>
+          <div class="painting-grid">
+            <figure class="painting-card">
+              <img
+                class="painting-thumb"
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg?width=1400"
+                alt="Mona Lisa by Leonardo da Vinci"
+                loading="lazy"
+              />
+              <figcaption class="painting-caption">
+                <strong>Mona Lisa</strong>
+                Leonardo da Vinci · c. 1503
+              </figcaption>
+            </figure>
+
+            <figure class="painting-card">
+              <img
+                class="painting-thumb"
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/The_School_of_Athens_by_Raffaello_Sanzio_da_Urbino_in_Vatican.jpg?width=1400"
+                alt="The School of Athens by Raphael"
+                loading="lazy"
+              />
+              <figcaption class="painting-caption">
+                <strong>The School of Athens</strong>
+                Raphael · 1509–1511
+              </figcaption>
+            </figure>
+
+            <figure class="painting-card">
+              <img
+                class="painting-thumb"
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Birth_of_Venus_(Botticelli)_1.jpg?width=1400"
+                alt="The Birth of Venus by Sandro Botticelli"
+                loading="lazy"
+              />
+              <figcaption class="painting-caption">
+                <strong>The Birth of Venus</strong>
+                Sandro Botticelli · c. 1485
+              </figcaption>
+            </figure>
+
+            <figure class="painting-card">
+              <img
+                class="painting-thumb"
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Leonardo_da_Vinci_-_The_Last_Supper_high_res.jpg?width=1400"
+                alt="The Last Supper by Leonardo da Vinci"
+                loading="lazy"
+              />
+              <figcaption class="painting-caption">
+                <strong>The Last Supper</strong>
+                Leonardo da Vinci · 1490s
+              </figcaption>
+            </figure>
+
+            <figure class="painting-card">
+              <img
+                class="painting-thumb"
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Creation_of_Adam_(1).png?width=1400"
+                alt="The Creation of Adam by Michelangelo"
+                loading="lazy"
+              />
+              <figcaption class="painting-caption">
+                <strong>The Creation of Adam</strong>
+                Michelangelo · c. 1511
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="era-group" aria-labelledby="era-baroque">
+          <div class="era-heading">
+            <h2 class="era-name" id="era-baroque">Baroque</h2>
+            <p class="era-note">Dramatic light, deep shadow, and theatrical staging.</p>
+          </div>
+          <div class="painting-grid">
+            <figure class="painting-card">
+              <img
+                class="painting-thumb"
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Nightwatch_by_Rembrandt_-_Rijksmuseum.jpg?width=1400"
+                alt="The Night Watch by Rembrandt"
+                loading="lazy"
+              />
+              <figcaption class="painting-caption">
+                <strong>The Night Watch</strong>
+                Rembrandt van Rijn · 1642
+              </figcaption>
+            </figure>
+
+            <figure class="painting-card">
+              <img
+                class="painting-thumb"
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Calling_of_Saint_Matthew-Caravaggo_(1599-1600).jpg?width=1400"
+                alt="The Calling of Saint Matthew by Caravaggio"
+                loading="lazy"
+              />
+              <figcaption class="painting-caption">
+                <strong>The Calling of Saint Matthew</strong>
+                Caravaggio · 1599–1600
+              </figcaption>
+            </figure>
+
+            <figure class="painting-card">
+              <img
+                class="painting-thumb"
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Las_Meninas,_by_Diego_Vel%C3%A1zquez,_from_Prado_in_Google_Earth.jpg?width=1400"
+                alt="Las Meninas by Diego Velázquez"
+                loading="lazy"
+              />
+              <figcaption class="painting-caption">
+                <strong>Las Meninas</strong>
+                Diego Velázquez · 1656
+              </figcaption>
+            </figure>
+
+            <figure class="painting-card">
+              <img
+                class="painting-thumb"
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Artemisia_Gentileschi_-_Giuditta_decapita_Oloferne_-_Google_Art_Project.jpg?width=1400"
+                alt="Judith Slaying Holofernes by Artemisia Gentileschi"
+                loading="lazy"
+              />
+              <figcaption class="painting-caption">
+                <strong>Judith Slaying Holofernes</strong>
+                Artemisia Gentileschi · c. 1612–1620
+              </figcaption>
+            </figure>
+
+            <figure class="painting-card">
+              <img
+                class="painting-thumb"
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Girl_with_a_Pearl_Earring.jpg?width=1400"
+                alt="Girl with a Pearl Earring by Johannes Vermeer"
+                loading="lazy"
+              />
+              <figcaption class="painting-caption">
+                <strong>Girl with a Pearl Earring</strong>
+                Johannes Vermeer · c. 1665
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="era-group" aria-labelledby="era-modernism">
+          <div class="era-heading">
+            <h2 class="era-name" id="era-modernism">Modernism</h2>
+            <p class="era-note">Color, perception, and form pushed into abstraction.</p>
+          </div>
+          <div class="painting-grid">
+            <figure class="painting-card">
+              <img
+                class="painting-thumb"
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Monet_-_Impression,_Sunrise.jpg?width=1400"
+                alt="Impression, Sunrise by Claude Monet"
+                loading="lazy"
+              />
+              <figcaption class="painting-caption">
+                <strong>Impression, Sunrise</strong>
+                Claude Monet · 1872
+              </figcaption>
+            </figure>
+
+            <figure class="painting-card">
+              <img
+                class="painting-thumb"
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Vincent_van_Gogh_Starry_Night.jpg?width=1400"
+                alt="The Starry Night by Vincent van Gogh"
+                loading="lazy"
+              />
+              <figcaption class="painting-caption">
+                <strong>The Starry Night</strong>
+                Vincent van Gogh · 1889
+              </figcaption>
+            </figure>
+
+            <figure class="painting-card">
+              <img
+                class="painting-thumb"
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Edvard_Munch_-_The_Scream_-_Google_Art_Project.jpg?width=1400"
+                alt="The Scream by Edvard Munch"
+                loading="lazy"
+              />
+              <figcaption class="painting-caption">
+                <strong>The Scream</strong>
+                Edvard Munch · 1893
+              </figcaption>
+            </figure>
+
+            <figure class="painting-card">
+              <img
+                class="painting-thumb"
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Wassily_Kandinsky_Composition_VIII.jpg?width=1400"
+                alt="Composition VIII by Wassily Kandinsky"
+                loading="lazy"
+              />
+              <figcaption class="painting-caption">
+                <strong>Composition VIII</strong>
+                Wassily Kandinsky · 1923
+              </figcaption>
+            </figure>
+
+            <figure class="painting-card">
+              <img
+                class="painting-thumb"
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Guernica_(3820712635).jpg?width=1400"
+                alt="Guernica by Pablo Picasso"
+                loading="lazy"
+              />
+              <figcaption class="painting-caption">
+                <strong>Guernica</strong>
+                Pablo Picasso · 1937 (mural reproduction)
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+      </div>
+    </section>
 
     <footer>
       This page is a compact study guide. For deeper reading, explore museum collections such as
